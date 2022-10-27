@@ -1,0 +1,118 @@
+body{
+    margin: 0;
+    padding: 40px 0 0;
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+.error-message{
+    color: red;
+    margin: 10px 10px 10px 0;
+}
+
+.avatar-auth{
+    width: 80px;
+    height: auto;
+}
+
+.form-style{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container{
+    padding: 60px 15px 0;
+}
+
+.form-group.row{
+    margin-bottom: 10px;
+}
+
+.final-button{
+  margin-bottom: 40px;
+}
+.form-check{
+    margin-top: 10px;
+}
+
+hr{
+    width: 100%;
+    border: black 2px solid
+}
+
+.avatar{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.my-text-area{
+    width: 100%;
+}
+
+.final-button{
+    margin-bottom: 10px;
+}
+
+.question{
+    border: 2px solid gray;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.auth{
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.auth-block{
+    margin-left: 5px;
+    display: inline-block;
+    height: 60px;
+    color: white;
+    width: auto;
+}
+
+.btn-rate{
+    margin-top: 5px;
+    font-size: 15px;
+    margin-left: 0;
+    padding-left: 0;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.rate{
+    margin-top: 5px;
+    border: black 2px solid;
+    display: inline-block;
+    font-size: 30px;
+    width: auto;
+}
+
+.question-tag{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+
+img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.my-btn-style:hover,
+.my-btn-style:active,
+.my-btn-style{
+    text-decoration: none;
+    color: white;
+}
+
+.members{
+    list-style-type: none;
+    padding-left: 0;
+}
