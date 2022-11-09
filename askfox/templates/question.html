@@ -1,0 +1,22 @@
+{% extends "inc/base.html" %}
+{% load static %}
+{% block content %}
+
+{% include "inc/question_item.html" %}
+<hr>
+
+{% for answer in answers %}
+    {% include "inc/answer.html" %}
+{% endfor %}
+
+<hr>
+
+{% include "inc/pagination.html" %}
+
+<div class="form-group row">
+    <textarea class="form-control my-text-area" placeholder="Enter your answer here" rows="4"></textarea>
+</div>
+<button type="button" class="btn btn-success final-button">Answer</button>
+
+{% endblock %}
+

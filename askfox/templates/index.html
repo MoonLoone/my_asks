@@ -1,0 +1,14 @@
+
+{% extends "inc/base.html" %}
+{% load static %}
+{% block content %}
+
+
+    {% for question in questions %}
+        {% include "inc/question_item.html" %}
+    {% endfor %}
+
+    {% include "inc/pagination.html" %}
+
+
+{% endblock %}
