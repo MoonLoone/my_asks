@@ -1,1 +1,7 @@
 venv
+Lib
+Scripts
+.idea
+pyvenv.cfg
+.gitignore
+askfox/db.sqlite3

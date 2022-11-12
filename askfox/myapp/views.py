@@ -8,7 +8,7 @@ def index(request):
     page = request.GET.get("page", 1)
     p = paginate(models.QUESTIONS, request, page)
     r = range(1, len(models.QUESTIONS) // 2)
-    context = {"questions": p.object_list, "title": "New Questions", "pages_count": r}
+    context = {"questions": p.object_list, "pages_count": r}
     return render(request, 'index.html', context=context)
 
 
@@ -25,7 +25,7 @@ def hot(request):
     best_questions.reverse()
     r = range(1, len(best_questions) // 2)
     p = paginate(best_questions, request, page)
-    context = {"questions": p, "title": "Best Questions", "pages_count": r}
+    context = {"questions": p, "pages_count": r}
     return render(request, 'index.html', context=context)
 
 
@@ -37,28 +37,24 @@ def question(request, question_id: int):
     if len(r) > 10:
         r = range(len(r) - 10, len(r))
     p = paginate(answers, request, page)
-    context = {"question": question_item, "title": "Question ", "pages_count": r, "answers": p.object_list}
+    context = {"question": question_item, "pages_count": r, "answers": p.object_list}
     return render(request, 'question.html', context=context)
 
 
 def login(request):
-    context = {"title": "Login"}
-    return render(request, 'login.html', context=context)
+    return render(request, 'login.html')
 
 
 def ask(request):
-    context = {"title": "Ask fox!"}
-    return render(request, 'ask.html', context=context)
+    return render(request, 'ask.html')
 
 
 def settings(request):
-    context = {"title": "Settings"}
-    return render(request, 'settings.html', context=context)
+    return render(request, 'settings.html')
 
 
 def signup(request):
-    context = {"title": "Authorization"}
-    return render(request, 'signup.html', context=context)
+    return render(request, 'signup.html')
 
 
 def tag(request, tag_name: str):
@@ -69,7 +65,7 @@ def tag(request, tag_name: str):
             question_with_tag.append(models.QUESTIONS[i])
     p = paginate(question_with_tag, request, page)
     r = range(1, len(question_with_tag) // 2)
-    context = {"questions": p.object_list, "title": str(tag_name), "pages_count": r}
+    context = {"questions": p.object_list, "pages_count": r, "tag_title": tag_name}
     return render(request, 'index.html', context=context)
 
 
