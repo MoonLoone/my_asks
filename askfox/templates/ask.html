@@ -8,24 +8,26 @@ Ask fox!
     <div class="form-group row">
         <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputTitle" placeholder="Title">
+            <input type="text" class="form-control" id="inputTitle" placeholder="Title" maxlength="120">
         </div>
+        <div class="error-message">Question with this title already exists</div>
     </div>
 
     <div class="form-group row">
         <label for="textArea" class="col-sm-2 col-form-label">Text</label>
         <div class="col-sm-10">
-            <textarea class="form-control" id="textArea" placeholder="Your text" rows="10"></textarea>
+            <textarea class="form-control" id="textArea" placeholder="Your text" maxlength="600" rows="10"></textarea>
         </div>
     </div>
 
     <div class="form-group row">
         <label for="inputTags" class="col-sm-2 col-form-label">Tags</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputTags" placeholder="Enter Your Tags">
+            <input type="text" class="form-control" id="inputTags" placeholder="Enter Your Tags" maxlength="50">
         </div>
     </div>
 </form>
+<div class="error-message">You should authorise before asking!</div>
 <button type="button" class="btn btn-success final-button"><a href="{% url 'index' %}" class="my-btn-style">Ask</a></button>
 
 {% endblock %}

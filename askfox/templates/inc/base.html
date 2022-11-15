@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
 
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Search" maxlength="120" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit"><a href="{% url 'ask' %}" class="my-btn-style" >ASK!</a></button>
                 </form>
 
@@ -72,11 +72,11 @@
 </main>
 
 
-</body>
-<footer>
-    <div style="float: right; padding-right: 5px">
+<footer style="padding-top:100px">
+    <div class="footer" style="float: right; padding-right: 5px">
         <p>Made by TrickyFox</p>
         <p>Email: tricky_fox@yandex.ru</p>
     </div>
 </footer>
+</body>
 </html>

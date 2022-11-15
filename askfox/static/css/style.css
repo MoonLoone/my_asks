@@ -99,6 +99,9 @@ hr{
     margin-right: 2px;
 }
 
+div{
+overflow: hidden;
+}
 
 img{
     max-width: 100%;
@@ -116,3 +119,14 @@ img{
     list-style-type: none;
     padding-left: 0;
 }
+
+.footer{
+    margin-top: 80px;
+    display: absolute;
+	left: 0;
+	bottom: 0;
+    float: right;
+    padding-right: 5px
+    padding-top: 80px
+}
+
