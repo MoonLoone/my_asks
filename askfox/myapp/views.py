@@ -34,9 +34,13 @@ def question(request, question_id: int):
 
 
 def tag(request):
+    page = request.GET.get("page", 1)
     tag_name = request.GET.get("tag_req", '')
-    p = models.Ask.objects.get_ask_by_tag(tag_name)
-    context = {"questions": p, "added_title": tag_name}
+    items_list = models.Ask.objects.get_ask_by_tag(tag_name)
+    paginator = utils.paginate(items_list, request, 3)
+    page = utils.validate_parameters(page, paginator.num_pages)
+    context = {"questions": paginator.page(page), "added_title": tag_name,
+               "pages_count": utils.paginator_range(int(page), paginator.num_pages, 6)}
     return render(request, 'index.html', context=context)
 
 

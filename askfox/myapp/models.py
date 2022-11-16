@@ -13,7 +13,7 @@ class Tag(models.Model):
 
 
 class FoxUser(User):
-    image = models.ImageField(default='askfox/static/img/default_user.png', blank=True)
+    image = models.ImageField(default='img/default_user.png', blank=True)
 
 
 def __str__(self):
