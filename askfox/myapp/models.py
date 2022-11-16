@@ -43,8 +43,7 @@ class AskManager(models.Manager):
         return super().get_queryset().annotate(number_of_like=Count('like')).order_by('-number_of_like').all()
 
     def get_ask_by_tag(self, tag_name):
-        return super().get_queryset().filter(tags__name=tag_name).annotate(number_of_like=Count('like')).order_by(
-            '-number_of_like').order_by('is_correct').all()
+        return super().get_queryset().filter(tags__name=tag_name).annotate(number_of_like=Count('like')).order_by('-number_of_like').all()
 
     def get_all_asks_by_date(self):
         return super().get_queryset().order_by('date').all()
