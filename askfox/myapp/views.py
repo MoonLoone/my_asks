@@ -6,9 +6,10 @@ def index(request):
     page = request.GET.get("page", 1)
     items_list = list(models.Ask.objects.get_all_asks_by_date())
     paginator = utils.paginate(items_list, request, 3)
-    page = utils.validate_parameters(page, paginator.num_pages)
+    page = utils.validate_parameters(int(page), paginator.num_pages)
     context = {"questions": paginator.page(page),
-               "pages_count": utils.paginator_range(int(page), paginator.num_pages, 6)}
+               "pages_count": utils.paginator_range(int(page), paginator.num_pages, 6),
+               }
     return render(request, 'index.html', context=context)
 
 
@@ -25,7 +26,7 @@ def hot(request):
 def question(request, question_id: int):
     page = request.GET.get("page", 1)
     question_item = models.Ask.objects.get(id=question_id)
-    paginator = utils.paginate(question_item.answers.all(), request, 2)
+    paginator = utils.paginate(models.Ask.objects.get_answers_for_ask(question_id), request, 2)
     page = utils.validate_parameters(page, paginator.num_pages)
     context = {"question": question_item, "answers": paginator.page(page),
                "pages_count": utils.paginator_range(int(page), paginator.num_pages, 6)}
@@ -59,4 +60,3 @@ def handler404(request, exception, template_name="404.html"):
     response = render(request, '404.html', status=404)
     response.status_code = 404
     return response
-

@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="col-10">
-            <h2 class="question-title">Best answer {{answer.id}}</h2>
+            <h2 class="question-title">{{answer.title}}</h2>
             <div class="question-text">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias architecto, debitis dolorem
                 dolores, et incidunt non optio quo tempore ut voluptates? Aliquam debitis delectus doloribus harum,
@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-2">
             <div class="row">
-                <div class="col-1 rate">5</div>
+                <div class="col-1 rate">{{answer.like_set.all|length}}</div>
                 <div class="col-1 btn-rate">
                     <button type="button">▲</button>
                     <button type="button">▼</button>

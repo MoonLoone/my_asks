@@ -1,10 +1,5 @@
 from django.core.paginator import Paginator
 
-LIKE_TYPES = [
-    ("answ", "Answer Like"),
-    ("ask", "Ask Like")
-]
-
 
 def paginate(objects_list, request, per_page):
     paginator = Paginator(objects_list, per_page)
@@ -24,7 +19,7 @@ def paginator_range(page_number, pages_count, paginator_border):
 
 
 def validate_parameters(parameter, item_range):
-    if not(isinstance(parameter, int)):
+    if not (isinstance(parameter, int)):
         return 1
     if parameter < 0 or parameter > item_range:
         return 1

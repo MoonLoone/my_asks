@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-2">
             <div class="row">
-                <div class="col-1 rate">{{question.likes.all.count}}</div>
+                <div class="col-1 rate">{{question.like_set.all|length}}</div>
                 <div class="col-1 btn-rate">
                     <button type="button">▲</button>
                     <button type="button">▼</button>
@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="col-4">
-            <a href="{% url 'question' question_id=question.id %}">answer ({{question.answers.all.count}})</a>
+            <a href="{% url 'question' question_id=question.id %}">answers({{question.answer_set.all|length}})</a>
         </div>
         <div class="col-6">
             Tags:
